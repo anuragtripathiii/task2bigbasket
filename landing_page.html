@@ -1,675 +1,348 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <!--Required meta tags always come first -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <!-- Bootstrap CSS
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <!--<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">-->
-    <title>BigBasket Online Store</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/fe1dc7696d.js" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/ccaffbd9f3.js"></script>
-    <meta charset="UTF-8">
-    <title>welcome</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        .row-header {
-            margin:0px auto;
-            padding:0px auto;
+        input[type=text] {
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid deepskyblue;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+            left: 11%;
+            border-color: #2196F3;
+            position: fixed;
+
         }
 
-        .row-content {
-            margin:0px auto;
-            padding:50px 0px 50px 0px;
-            border-bottom: 1px ridge;
-            min-height: 400px;
+
+        input[type=text]:focus {
+            width:78%;
+            border-color: #2196F3;
+        }
+        input:hover{
+            border-color: #2196F3;
+        }
+
+        .drop2 {
+            position: relative;
+            display: none;
+        }
+
+        .dropdown-content2 {
+            display: none;
+            position: fixed;
+            background-color:lightgreen;
+            min-width: 80px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+            right: 1%;
+            top: 12%;
+            float: initial;
+
+        }
+
+        .drop2:hover .dropdown-content2 {
+            display: block;
+        }
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            padding:50px 0px 0px 0px;
-            z-index: 0;
-        }
-        .navbar-dark {
-            background-color: #512DA8;
+            background-color: lightblue;
+
         }
 
-        .carousel {
-            background:#512DA8;
+        .navbar {
+            margin-left: 150px;
+            margin-right: 150px;
+            margin-top: 50px;
+            top: 10%;
+            overflow: hidden;
+            background-color: lightgreen;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
-        .carousel-item {
-            height: 400px;
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
         }
 
-        .carousel-item img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            min-height: 400px;
+        .dropdown {
+            float: left;
+            overflow: hidden;
         }
 
-        .img {
-            position: absolute;
-            min-height: 400px;
+
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font: inherit;
+            margin: 0;
         }
 
-        .vertical-align {
-            display: flex;
-            align-items: center;
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: whitesmoke;
         }
-
-        img:hover {
-            box-shadow: 0 0 2px 1px rgba(81, 83, 83, 0.5);
-        }
-
-        #more {
-            display: none;
-        }
-        #mytable {
-            border-collapse: collapse;
-            border: 1px solid #ccc;
-        }
-
-        .well
-        {
-            padding:20px 10px 20px 10px;
+        .signin:hover, .signup:hover,.cart:hover,.signup2:hover,.signin2:hover,.cart2:hover{
+            color: black;
+            transition: color 0.4s ease-in-out;
+            transform: translateY(10%);
+            font-weight: bold;
         }
 
         .dropdown-content {
             display: none;
             position: absolute;
             background-color: #f9f9f9;
-            min-width: 240px;
+            width: 30%;
+            left: 0;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
+            float: right;
+            margin-left: 159px;
         }
 
-        .dropdown-content a {
-            color: black;
-            padding: 1px 6px;
-            text-decoration: none;
-            display: block;
-            top: 10%;
-            font-family:AppleSystemUIFont;
-            font-weight: lighter;
-        }
 
-        .dropdown-content a:hover {
-            background-color: #f1f1f1
+        .dropdown-content .header {
+            background: black;
+            padding: 1px;
+            color: white;
         }
 
         .dropdown:hover .dropdown-content {
             display: block;
-
         }
 
-        .dropdown:hover .category {
-            background-color: #3e8e41;
+        /* Create three equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 33.3%;
+            padding: 10px;
+            background-color: #ccc;
+            height: 250px;
         }
 
-
-
-
-
-
-        body{
-            margin-right: 150px;
-            margin-left: 150px;
-            margin-top: 0px;
-            padding:0;
-        }
-        .companylogo{
-            position: absolute;
-            font-size: 30px;
-            top: 0%;
-        }
-        .category{
-            position: absolute;
-            font-size: 20px;
-            top: 11%;
-            background-color: forestgreen;
-            width: 240px;
-            height: 33px;
-            color: white;
-            font-weight: bold;
-            border-radius: 2%;
-        }
-        .category2{
-            position: absolute;
-            top: 6%;
-            text-decoration: none;
-            color: white;
-        }
-        .down{
-            position: absolute;
-            right: 5%;
-            color: white;
-            top: 10%;
-            text-decoration: none;
-        }
-        .offer{
-            position: fixed;
-            left: 32%;
-            width: 105px;
-            top: 11%;
-            color: gray;
-        }
-        .offer:hover,.tag:hover{
+        .column a {
+            float: none;
             color: black;
-        }
-        .fixed {
-            top: 2%;
-            position: absolute;
-            left: 105%;
-            width: 120px;
-        }
-        .hr{
-            border:1px solid gray;
-            rotation: 180deg;
-            width: 1120px;
-            position: absolute;
-            top:15%;
-        }
-        .hr2{
-            border:1px solid gray;
-            rotation: 180deg;
-            width: 1120px;
-            position: absolute;
-            top:11%;
-
-        }
-        .fixed:hover{
-            color: black;
-            transition:color 0.5s ease-in-out;
-            border-radius: 20%;
-        }
-        .example{
-            position: absolute;
-            top: 5%;
-            right: 35%;
-            width: 500px;
-        }
-        input{
-            width: 400px;
-            height: 30px;
-        }
-        .button1{
-            width: 7%;
-            padding: 5px;
-            background: #2196F3;
-            color: white;
-            font-size: 11px;
-            cursor: pointer;
-        }
-        .contact{
-            position: absolute;
-            right: 40%;
-        }
-        .button {
-            position: absolute;
-            right: 25%;
-            top: 5%;
+            padding: 8px;
             text-decoration: none;
-            color: white;
+            display: block;
+            text-align: left;
         }
-        .signin{
-            position: absolute;
-            background: transparent;
-            border: none;right: 18%;
+
+        .column a:hover {
+            background-color: navajowhite;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
         }
         .cart{
             position: absolute;
-            border: none;
             right: 16%;
-            top: 5%;
-            color: black;
+            top: 8%;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .cart2{
+            text-decoration: none;
+            font-size: 20px;
+
+        }
+        .signin{
+            position: absolute;
+            right: 20%;
+            color: gray;
+            font-weight: lighter;
+            top:2%;
+        }
+        .signin2{
+            color: gray;
+            font-weight: lighter;
+            text-decoration: none;
 
         }
         .signup{
+
             position: absolute;
-            background: transparent;
-            border: none;right: 11%;
+            right: 14%;
+            color: gray;
+            font-weight: lighter;
+            top:2%;
         }
-        .signup:hover{
-            color: red;
+        .signup2{
+            color: gray;
+            font-weight: lighter;
+            text-decoration: none;
         }
-        .signin:hover{
-            color: red;
+        #logo{
+            position: absolute;
+            top: 1%;
+            font-size: 30px;
+            left: 12%;
+
+        }
+        #call{
+            position: absolute;
+            top: -1%;
+            font-size: 20px;
+            left: 50%;
+        }
+        .bars{
+            position: fixed;
+            font-size: 30px;
+            right: 12%;
+            top: 7.5%;
+            float: right;
         }
 
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 1200px) {
+            .column {
+                width: 100%;
+                height: auto;
+            }
+            .navbar{
+                margin-left: 0px;
+                margin-right: 0px;
 
+            }
+            .signup{
+                right: 5%;
+            }
+            #logo{
+                left: 2%;
+            }
+            #call{
+                left: 32%;
+            }
+            .bars{
+                right: 5%;
+            }
+            .cart{
+                right: 12%;
+            }
+
+        }
+
+        @media only screen and (max-width: 500px) {
+                .drop2{
+                    display: inline-block;
+                }
+              .cart,.signup,.signin{
+                  display: none;
+              }
+              #call{
+                  left:69%
+              }
+              .searchbar{
+                  left: 14%;
+              }
+
+        }
+        @media only screen and (max-width: 676px) {
+            .searchbar{
+                left: 1%;
+                width: 300px;
+            }
+
+        }
     </style>
-
 </head>
 <body>
+<div class="navbar">
+    <a style="color: black" href="#home">Home</a>
+    <a style="color: black"  href="#offers"><i style="color: red" class="fas fa-tag"></i> OFFERS</a>
 
-<header class="box">
-    <div class="companylogo">ANU<br><span style="color: red">RAG</span></div>
-    <span class="category">
-<div class="dropdown">
-            <button type="button" style="background: transparent;border: none" class="category2" data-toggle="dropdown">&nbsp Shop by category</button>
 
-  <div class="dropdown-content">
-  <a href="#">Link 1</a>
-  <a href="#">Link 2</a>
-  <a href="#">Link 3</a>
-        <a href="#">Link 4</a>
-  <a href="#">Link 5</a>
-  <a href="#">Link 6</a>
-  <a href="#">Link 7</a>
+    <div class="dropdown">
+        <button  style="color: black"  class="dropbtn">Shop by Category
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <div class="header">
+                <h2>Mega Menu</h2>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <h3>Category 1</h3>
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+                <div class="column">
+                    <h3>Category 2</h3>
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+                <div class="column">
+                    <h3>Category 3</h3>
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
 
-  </div>
-
-        <i class="fas fa-sort-down down"></i>
-
+                </div>
+            </div>
         </div>
-        <a href="#"><div class="fixed offer"><i style="color: red" class="fas fa-tag"></i>
-            OFFERS
-        </div></a>
-
-        </div>
-    </span>
+    </div>
+</div>
 
 
-    <form class="example" action="/action_page.php">
-        <input type="text" placeholder="Search for products. .." name="searchbar">
-        <button class="button1" type="submit"><i class="fa fa-search"></i></button>
+
+
+
+<div class="drop2">
+    <span><i class="fas fa-bars bars"></i></span>
+    <div class="dropdown-content2">
+        <a  class="signin2" href="#" ><p><i style="color: red"  class="fas fa-sign-in-alt"> </i> SignIn</p></a>
+        <a class="signup2" href="#"><i style="color: red"  class="fas fa-sign-in-alt"> </i> SignUp</a><br><br>
+        <a class="cart2" href="#"><i style="color: red"  class="fas fa-shopping-cart"></i> Cart</a>
+    </div>
+</div>
+
+
+
+
+
+
+<a class="cart" style="color: black" href="#"><i style="color: red" class="fas fa-shopping-cart"></i> Cart</a>
+
+<a href="#"><span class="signin"><i style="color: red" class="fas fa-sign-in-alt"></i> SignIn</span></a>
+<a href="#"><span class="signup"><i style="color: red" class="fas fa-sign-in-alt"> </i> SignUp</span></a>
+<a id="logo">ANU<span style="color: red">RAG</span></a>
+<p id="call"><i class="fas fa-phone-alt"></i> xxxxx-xxxxx</p>
+<div class="search-container">
+
+    <form>
+        <input type="text" name="search" placeholder="Search..">
     </form>
-
-</header>
-<span class="hr"></span>
-<span class="hr2"></span>
-<p class="contact"><i class="fas fa-phone-alt"></i> xxxxx-xxxxx</p>
-<button type="button" class="btn btn-success button"><a href="#" style="color: white"> PRIME</a></button>
-<button class="signin" type="button"><a href="#" style="text-decoration: none">signIn </a><i class="fas fa-sign-in-alt"></i></button>
-<button type="button" class="signup"><a href="#" style="text-decoration: none"> signUp </a><i class="fas fa-user-plus"></i></button>
-<button type="button" class="cart btn btn-danger"><a href="#" style="text-decoration: none;color: white"> cart </a><i class="fas fa-shopping-cart"></i></button>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-
-
-<div class="container-fluid">
-    <div class="row row-content">
-        <div class="col">
-            <div id="mycarousel1" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <a href="#"><img src="https://www.bigbasket.com/media/uploads/banner_images/2005004_mango-banganapalli_460.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="#"><img src="https://www.bigbasket.com/media/uploads/banner_images/T1_All_FOM_DT_1_1600x460_25thApr.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="#"><img src="https://www.bigbasket.com/media/uploads/banner_images/T1_All_EggsMeatFish_DT_9_1600x460_14thMay.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="#"><img src="https://www.bigbasket.com/media/uploads/banner_images/2005011_cooking-essentials_460_28th.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="#"><img src="https://www.bigbasket.com/media/uploads/banner_images/2005010_breakfast-store_460_28th.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="#"><img src="https://www.bigbasket.com/media/uploads/banner_images/2005007_cleaning-household_460_2ndMay.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="#"><img src="https://www.bigbasket.com/media/uploads/banner_images/2005009_tea-time-snacking_460_28th.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                    <ol class="carousel-indicators">
-                        <li data-target="#mycarousel1" data-slide-to="0" class="active"></li>
-                        <li data-target="#mycarousel1" data-slide-to="1"></li>
-                        <li data-target="#mycarousel1" data-slide-to="2"></li>
-                        <li data-target="#mycarousel1" data-slide-to="3"></li>
-                        <li data-target="#mycarousel1" data-slide-to="4"></li>
-                        <li data-target="#mycarousel1" data-slide-to="5"></li>
-                        <li data-target="#mycarousel1" data-slide-to="6"></li>
-
-                    </ol>
-                    <a class="carousel-control-prev" href="#mycarousel1" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#mycarousel1" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <div class="row row-content">
-        <div class="col">
-            <a href="#"><img src="https://www.bigbasket.com/media/uploads/banner_images/2004225_essentials_400_17thApr.jpg" class="d-block w-100" alt="every day essentials"></a>
-        </div>
-    </div>
-    <div class="row row-content">
-        <div class="col">
-            <div id="mycarousel2" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <a href="#"><img src="https://www.bigbasket.com/media/uploads/banner_images/All_HowtobeaCaringSHopper_DT_2_1130x400_25thApr.jpg" class="d-block w-100" alt=""></a>
-
-                    </div>
-                    <div class="carousel-item">
-                        <a href="#"><img src="https://www.bigbasket.com/media/uploads/banner_images/All_PrecautionaryMeasures_DT_1_1130x400_25thApr.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="#"><img src="https://www.bigbasket.com/media/uploads/banner_images/All_Mango_DT_6_1130x400_25thApr.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                    <ol class="carousel-indicators">
-                        <li data-target="#mycarousel2" data-slide-to="0" class="active"></li>
-                        <li data-target="#mycarousel2" data-slide-to="1"></li>
-                        <li data-target="#mycarousel2" data-slide-to="2"></li>
-                    </ol>
-
-                    <a class="carousel-control-prev" href="#mycarousel2" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#mycarousel2" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="row row-content">
-        <div class="col">
-            <h4><center>Bank Offers</center></h4>
-            <hr>
-            <div class="media">
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/32acc961-2c4d-44a9-ab48-b7ef59834356/All_DigiBank_BBstar_480x360_18thMay.jpg" alt="Digi Bank"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/32acc961-2c4d-44a9-ab48-b7ef59834356/All_HSBC_DT_2_480x360_1stMay.jpg" alt="HSDC"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/32acc961-2c4d-44a9-ab48-b7ef59834356/All_Mobikwik_DT_3_480x360_1stMay.jpg" alt="Mobikwik"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/32acc961-2c4d-44a9-ab48-b7ef59834356/T1_All_Airtel_DT_4_480x360_1stMay.jpg" alt="Airtel"></a>
-
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <h4><center>Staples Corner</center></h4>
-        <hr>
-        <div class="row">
-            <div class="col-12 col-sm-6">
-                <a href="#"><img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/71490399-d8a2-4fa4-95d5-4901eb00dcac/T1_All_Masalas-Spices_DT_1_560x378_South_25thApr.jpg" class="d-block w-100" alt="..."></a>
-            </div>
-            <div class="col-12 col-sm">
-                <div class="row">
-                    <div class="col-12 col-sm-6 col-sm-3">
-                        <a href="#"><img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/71490399-d8a2-4fa4-95d5-4901eb00dcac/T1_All_Atta_Flour_DT_2_275x184_South_25thApr.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                    <div class="col-12 col-sm-6 col-sm">
-                        <a href="#"><img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/71490399-d8a2-4fa4-95d5-4901eb00dcac/T1_All_Rice-Rice-Products_DT_4_275x184_South_25thApr.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-12 col-sm-6 col-sm-3">
-                        <a href="#"><img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/71490399-d8a2-4fa4-95d5-4901eb00dcac/T1_All_Dals-Pulses_DT_3_275x184_South_25thApr.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                    <div class="col-12 col-sm-6 col-sm">
-                        <a href="#"><img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/71490399-d8a2-4fa4-95d5-4901eb00dcac/T1_All_Cooking-Oils_DT_5_275x184_South_25thApr.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row row-content">
-        <div class="col">
-            <h4><center>Fruits and Vegetables</center></h4>
-            <hr>
-            <div class="media">
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/da0b399c-870f-4fbf-8e92-2fba0660bfce/T1_All_Fresh-Vegetables_DT_2_480x360_28thApr.jpg" alt="vegetables"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/da0b399c-870f-4fbf-8e92-2fba0660bfce/T1_All_Fresh-Fruits_DT_1_480x360_28thApr.jpg" alt="fruits"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/da0b399c-870f-4fbf-8e92-2fba0660bfce/T1_All_Cuts-Sprouts_DT_3_480x360_28thApr.jpg" alt="sprouts"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/da0b399c-870f-4fbf-8e92-2fba0660bfce/T1_All_Exotics_DT_4_480x360_28thApr.jpg" alt="exotics"></a>
-
-            </div>
-        </div>
-    </div>
-    <div class="row row-content">
-        <div class="col">
-            <h4><center>Summer Drinks</center></h4>
-            <hr>
-            <div class="media">
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/1c529346-ad45-49b0-8e25-c087a896c46c/2005027_juices_360_28th.jpg" alt="juices"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/1c529346-ad45-49b0-8e25-c087a896c46c/2005028_cold-drinks_360_28th.jpg" alt="cold_drinks"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/1c529346-ad45-49b0-8e25-c087a896c46c/2005029_syrups-concentrate_360_28th.jpg" alt="syrups"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/1c529346-ad45-49b0-8e25-c087a896c46c/2005030_buttermilk-lassi_360_South_28th.jpg" alt="lassi"></a>
-
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <h4><center>Snacks Store</center></h4>
-        <hr>
-        <div class="row">
-            <div class="col-12 col-sm-6">
-                <a href="#"><img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/ae109a84-9cf6-4680-8018-72e8651b2934/2005033_namkeens_378_28th.jpg" class="d-block w-100" alt="..."></a>
-            </div>
-            <div class="col-12 col-sm">
-                <div class="row">
-                    <div class="col-12 col-sm-6 col-sm-3">
-                        <a href="#"><img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/ae109a84-9cf6-4680-8018-72e8651b2934/2005034_biscuits-cookies_184_28th.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                    <div class="col-12 col-sm-6 col-sm">
-                        <a href="#"><img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/ae109a84-9cf6-4680-8018-72e8651b2934/2005035_chip-nacho-popcorn_184_28th.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-12 col-sm-6 col-sm-3">
-                        <a href="#"><img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/ae109a84-9cf6-4680-8018-72e8651b2934/2005036_frozen-snack-soups_184_28th.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                    <div class="col-12 col-sm-6 col-sm">
-                        <a href="#"><img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/ae109a84-9cf6-4680-8018-72e8651b2934/2005037_breakfast-store_184_28th.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row row-content">
-        <div class="col">
-            <h4><center>Cleaning and Household</center></h4>
-            <hr>
-            <div class="media">
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/a187f2d1-f3a8-487e-9a11-a9f659cceb6d/2005040_detergent-powder_360.jpg" alt="vegetables"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/a187f2d1-f3a8-487e-9a11-a9f659cceb6d/2005041_liquid-detergents_360.jpg" alt="fruits"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/a187f2d1-f3a8-487e-9a11-a9f659cceb6d/2005042_kitchen-cleaning_360.jpg" alt="sprouts"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/a187f2d1-f3a8-487e-9a11-a9f659cceb6d/2005043_home-cleaners_360.jpg" alt="exotics"></a>
-
-            </div>
-        </div>
-    </div>
-    <div class="row row-content">
-        <div class="col">
-            <h4><center>Personal Care</center></h4>
-            <hr>
-            <div class="media">
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/2ceef6c5-e1aa-433f-b5f7-f53b85c0f692/2005048_soap-handwash-more_360.jpg" alt="soaps_handwashes"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/2ceef6c5-e1aa-433f-b5f7-f53b85c0f692/2005049_summer-pc_360.jpg" alt="summer_pc"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/2ceef6c5-e1aa-433f-b5f7-f53b85c0f692/T1_All_FeminineHygiene_DT-3_480x360_25thApr.jpg" alt="femininehygine"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/2ceef6c5-e1aa-433f-b5f7-f53b85c0f692/T1_All_OralCare_DT_4_480x360_25thApr.jpg" alt="oral care"></a>
-
-            </div>
-        </div>
-    </div>
-    <div class="row row-content">
-        <div class="col">
-            <div id="mycarousel3" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <a href="#"><img src="https://www.bigbasket.com/media/uploads/banner_images/2005067_skincare-essential_400.jpg" class="d-block w-100" alt=""></a>
-
-                    </div>
-                    <div class="carousel-item">
-                        <a href="#"><img src="https://www.bigbasket.com/media/uploads/banner_images/All_BabyStore_DT_2_1130x400_25thApr.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="#"><img src="https://www.bigbasket.com/media/uploads/banner_images/T1_All_PetStore_DT_3_1130x400_25thApr.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="#"><img src="https://www.bigbasket.com/media/uploads/banner_images/T1_All_EggsMeatFish_DT_5_1130x400_14thMay.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="#"><img src="https://www.bigbasket.com/media/uploads/banner_images/All_Ramazan_DT_6_1130x400_19thApr.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="#"><img src="https://www.bigbasket.com/media/uploads/banner_images/2005069_anti-pollutionmask_400.jpg" class="d-block w-100" alt="..."></a>
-                    </div>
-
-                    <ol class="carousel-indicators">
-                        <li data-target="#mycarousel3" data-slide-to="0" class="active"></li>
-                        <li data-target="#mycarousel3" data-slide-to="1"></li>
-                        <li data-target="#mycarousel3" data-slide-to="2"></li>
-                        <li data-target="#mycarousel3" data-slide-to="3"></li>
-                        <li data-target="#mycarousel3" data-slide-to="4"></li>
-                        <li data-target="#mycarousel3" data-slide-to="5"></li>
-
-                    </ol>
-
-                    <a class="carousel-control-prev" href="#mycarousel3" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#mycarousel3" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <div class="row row-content">
-        <div class="col">
-            <h4><center>Brand Store</center></h4>
-            <hr>
-            <div class="media">
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/1f4e0f2c-78a5-4553-9328-93a583586bcb/T1_All_Dettol_480x360_25thFeb.jpg" alt="juices"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/1f4e0f2c-78a5-4553-9328-93a583586bcb/T1_All_Ariel_480x360_25thFeb.jpg" alt="cold_drinks"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/1f4e0f2c-78a5-4553-9328-93a583586bcb/T1_All_Colgate_480x360_2thJan.jpg" alt="syrups"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/1f4e0f2c-78a5-4553-9328-93a583586bcb/T1_All_Patanjali_480x360_25thFeb.jpg" alt="lassi"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/1f4e0f2c-78a5-4553-9328-93a583586bcb/T1_All_Amul_DT_5_480x360_7thApr.jpg" alt="lassi"></a>
-                <a href="#"><img class="d-flex mr-3 img-thumbnail align-self-center"
-                                 src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/35fdd2de-6305-4fc4-9a1f-f415c0d9f114/1f4e0f2c-78a5-4553-9328-93a583586bcb/T1_All_Cocacola_DT_6_480x360_7thApr.jpg" alt="lassi"></a>
-
-            </div>
-        </div>
-    </div>
-    <table id="mytable">
-        <tr>
-            <td>
-                <div class="well well-lg">
-                    <h4>bigbasket – online grocery store</h4>
-                    <p>Did you ever imagine that the freshest of <a href="#">fruits and vegetables</a>, top quality pulses and food grains, <a href="#">dairy products</a> and hundreds of branded items could be handpicked and delivered to your home, all at the click of a button? India’s first comprehensive online megastore, bigbasket.com, brings a whopping 20000+ products with more than 1000 brands, to over 4 million happy customers. From household cleaning products to beauty and makeup, bigbasket has everything you need for your daily needs. bigbasket.com is convenience personified We’ve taken away all the stress associated with shopping for daily essentials, and you can now order all your household products and even buy groceries online without travelling long distances or standing in serpentine queues. Add to this the convenience of finding all your requirements at one single source, along with great savings, and you will realize that bigbasket- India’s largest online supermarket, has revolutionized the way India shops for groceries. Online grocery shopping has never been easier. Need things fresh? Whether it’s fruits and vegetables or dairy and meat, we have this covered as well! Get fresh eggs, meat, fish and more online at your convenience. Hassle-free Home Delivery options</p>
-
-                    <p>We deliver to 25 cities across India and maintain excellent delivery times, ensuring that all your products from groceries to snacks <a href="#">branded foods</a> reach you in time.</p>
-                    <ul>
-                        <li>Slotted Delivery: Pick the most convenient delivery slot to have your grocery delivered. From early morning delivery for early birds, to late-night delivery for people who work the late shift, bigbasket caters to every schedule.</li>
-                        <li>Express Delivery: This super useful service can be availed by customers in cities like Bangalore, Mumbai, Pune, Chennai, Kolkata, Hyderabad and Delhi-NCR in which we deliver your orders to your doorstep in 90 Minutes.</li>
-                        <li>BB Specialty stores: Missed out on buying that essential item from your favorite neighborhood store for tonight’s party? We’ll deliver it for you! From bakery, sweets and meat to flowers and chocolates, we deliver your order in 90 minutes, through a special arrangement with a nearby specialty store, verified by us.</li>
-                    </ul>
-                    <span id="dots"></span><span id="more">
-                <h4>India’s biggest Online Supermarket</h4>
-                <p>bigbasket.com believes in providing the highest level of customer service and is continuously innovating to meet customer expectations. Our On-time Guarantee is one such assurance where we refund 5% of the bill value if the delivery is delayed. For all your order values above Rs. 1000, we provide free delivery. A wide range of imported and gourmet products are available through our express delivery and slotted delivery service. If you ever find an item missing on delivery or want to return a product, you can report it to us within 48 hours for a ‘no-questions-asked’ refund.</p>
-
-                <p>Best quality products for our quality-conscious customers.</p>
-
-                <p>bigbasket.com is synonymous with superior quality and continues to strive for higher levels of customer trust and confidence, by taking feedback and giving our customers what they want. We have added the convenience of pre-cut fruits in our Fresho range. If it’s a product category you’re looking to shop from, we’ve made it convenient for you to access all products in a section easily. For instance, if you’re looking for <a href="#">beverages</a>, you can order from a long list of beverages that include cool drinks, hot teas, fruit juices and more.</p>
-
-                <p>We are proud to be associated closely with the farmers from whom we source our fresh products. Most of our farm-fresh products are sourced directly from farmers, which not only ensures the best prices and freshest products for our customers but also helps the farmers get better prices. With more than 80 Organic Fruits and Vegetables and a wide range of organic staples, bigbasket has the largest range in the organic products category.</p>
-
-                <p>When it comes to payment, we have made it easy for our customers can pay through multiple payment channels like Credit and Debit cards, Internet Banking, e-wallets and Sodexo passes or simply pay Cash on Delivery (COD).The convenience of shopping for home and daily needs, while not compromising on quality, has made bigbasket.com the online supermarket of choice for thousands of happy customers across India.</p>
-
-                </span>
-                    <button onclick="myFunction()" id="myBtn">Read more...</button>
-            </td>
-        </tr>
-    </table>
-
-    <script>
-        function myFunction() {
-            var dots = document.getElementById("dots");
-            var moreText = document.getElementById("more");
-            var btnText = document.getElementById("myBtn");
-
-            if (dots.style.display === "none") {
-                dots.style.display = "inline";
-                btnText.innerHTML = "Read more";
-                moreText.style.display = "none";
-            } else {
-                dots.style.display = "none";
-                btnText.innerHTML = "Read less";
-                moreText.style.display = "inline";
-            }
-        }
-    </script>
-
-
 </div>
-</div>
-<!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
-
-
-
 
 </body>
 </html>
